@@ -25,6 +25,8 @@ public class EncapsulationExample {
     }
 
     private static abstract class Car {
+  //현재 연비보다 높은 값을 설정하려 할 경우, 종류 상관 없이 오류를 발생시켜야 합니다.
+
         private final String carName = "Car Prototype";
 
         private double realFuelEfficiency = 7.5;
@@ -38,7 +40,15 @@ public class EncapsulationExample {
         }
 
         public void setRealFuelEfficiency(double realFuelEfficiency) {
-            this.realFuelEfficiency = realFuelEfficiency;
+
+
+            try {
+                throw new Exception("연비보다 높은 값입니다.");
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+
+
         }
     }
 

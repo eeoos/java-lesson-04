@@ -20,11 +20,11 @@ public class ImplementationExample {
         /**
          * 해당 메서드는 다음과 같은 역할을 가져야 합니다 :
          * 다음 문자열을 반환해야 합니다.
-         *
+         * <p>
          * "TestValue"
          */
         public String getString() {
-            throw new RuntimeException("이 코드 라인을 지우고, 이곳에서 작성하십시오.");
+            return "TestValue";
         }
 
         /**
@@ -44,7 +44,12 @@ public class ImplementationExample {
          * @param data 계산이 진행되어야 할 값
          */
         public String eval(String first, int data) {
-            throw new RuntimeException("이 코드 라인을 지우고, 이곳에서 작성하십시오.");
+            double value = data;
+            value /= 2; // 2로 나눔
+            value *= 7; // 7을 곱함
+            value = Math.pow(value, 3); // 3으로 제곱
+            value /= 5; // 5로 나눔
+            return first + " - " + (int)value; // 결과를 정수로 변환하여 반환
         }
     }
 }
